@@ -1,3 +1,5 @@
+Exports object with symbol (id) and viewBox
+
 # SVG Sprite Webpack Loader
 
 It's like [style-loader](https://github.com/webpack/style-loader), but for SVGs. Features:

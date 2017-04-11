@@ -52,6 +52,7 @@ module.exports = function (content) {
   }
 
   doc.$svg.attr('id', id);
+  var viewBox = doc.$svg.attr('viewBox');
 
   content = doc.toString(SVGDoc.OUTPUT_FORMAT.SYMBOL);
   var output;
@@ -71,7 +72,7 @@ module.exports = function (content) {
       config.angularBaseWorkaround ? 'require("' + path.resolve(__dirname, 'lib/web/angular-base-workaround').replace(/\\/g, "/") + '");' : '',
       'var sprite = require("' + config.spriteModule.replace(/\\/g, "/") + '");',
       'var image = ' + JSON.stringify(content) + ';',
-      exportCode + 'sprite.add(image, "' + id + '");'
+      exportCode + 'sprite.add(image, "' + id + '", "' + viewBox + '");'
     ];
   }
 
